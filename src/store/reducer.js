@@ -36,7 +36,7 @@ const userReducer = (state = [], action) => {
         case "LOGOUT":
             let indexOfUserToLogout = state.findIndex((user) => user.email === action.payload.email);
             state[indexOfUserToLogout].isloggedin = false;
-            showToastSuccessMessage("User logged in successfully!");
+            showToastSuccessMessage("User logged out successfully!");
             return [...state]
         case "ADD_DEALS":
             let indexOfUserToAddDeal = state.findIndex((user) => user.email === action.payload.email);
@@ -48,7 +48,7 @@ const userReducer = (state = [], action) => {
                 showToastSuccessMessage("Item added to deals successfully!");
                 return  [...state];
             } else {
-                showToastWarningMessage("Item aleady added to deals!");
+                showToastWarningMessage("Item aleady added in deals!");
             }
             return state
         case "REMOVE_DEALS":
@@ -63,7 +63,7 @@ const userReducer = (state = [], action) => {
                 showToastSuccessMessage("Item removed from deals successfully!");
                 return  [...state];
             } else {
-                showToastWarningMessage("Item not present to the deals!");
+                showToastWarningMessage("Item not present in the deals!");
             }
             return state
         default: return state
